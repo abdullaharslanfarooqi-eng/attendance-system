@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>📊 Attendance Dashboard</h1>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </header>
+        
+        <div class="dashboard-grid">
+            <!-- Left Panel: Classes & Students -->
+            <div class="panel">
+                <div class="card">
+                    <h3>📚 My Classes</h3>
+                    <button id="addClassBtn" class="btn-small">+ New Class</button>
+                    <div id="classesList"></div>
+                </div>
+                
+                <div class="card">
+                    <h3>👥 Students</h3>
+                    <div id="studentsPanel">
+                        <p>Select a class to manage students</p>
+                    </div>
+                    <button id="addStudentBtn" class="btn-small" style="display:none;">+ Add Student</button>
+                    <button id="bulkUploadBtn" class="btn-small" style="display:none;">📤 Bulk Upload CSV</button>
+                </div>
+            </div>
+            
+            <!-- Right Panel: Attendance & QR -->
+            <div class="panel">
+                <div class="card">
+                    <h3>✅ Today's Attendance</h3>
+                    <div id="selectedClassInfo"></div>
+                    <button id="generateQRBtn" class="btn-primary" style="display:none;">📱 Generate QR Code (10 min)</button>
+                    <div id="qrDisplay" style="display:none;">
+                        <h4>Scan this QR code:</h4>
+                        <div id="qrCodeImg"></div>
+                        <p>⏰ Expires in 10 minutes</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>📋 Attendance Records</h3>
+                    <button id="exportCSVBtn" class="btn-small">📎 Export CSV</button>
+                    <div id="attendanceTable"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="teacher.js"></script>
+</body>
+</html>
