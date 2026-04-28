@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="attendanceApp">
+            <!-- Step 1: Enter ID -->
+            <div id="step1" class="step active">
+                <div class="card">
+                    <h2>📝 Enter Your Student ID</h2>
+                    <input type="number" id="studentId" placeholder="Student ID Number" class="large-input">
+                    <button id="nextToPhoto" class="btn-primary">Next →</button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Take Live Photo -->
+            <div id="step2" class="step">
+                <div class="card">
+                    <h2>📸 Take a Live Photo</h2>
+                    <p class="warning">⚠️ Must be inside the classroom with visible background</p>
+                    <video id="camera" autoplay playsinline></video>
+                    <button id="captureBtn" class="btn-primary">Take Photo</button>
+                    <canvas id="canvas" style="display:none;"></canvas>
+                    <div id="photoPreview"></div>
+                    <button id="submitAttendance" class="btn-success" style="display:none;">✅ Submit Attendance</button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Success -->
+            <div id="step3" class="step">
+                <div class="card success-card">
+                    <h2>✅ Attendance Recorded!</h2>
+                    <div id="summaryStats"></div>
+                    <button onclick="location.reload()" class="btn-primary">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="attend.js"></script>
+</body>
+</html>
